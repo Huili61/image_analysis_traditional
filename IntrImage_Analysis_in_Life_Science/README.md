@@ -286,6 +286,16 @@ else {
 if (to_print || a > b){
 	print("a is smaller than b");
 	}
+
+directory ="C:/Users/CCI/Desktop/fiji-win54\\Fiji.app";
+directory = getDir("Select folder");
+filelist = getFileList(directory);
+for (i =0; 1 < lengthof(filelist); i++) {
+	if (endswith(filelist[i],".tif") && startshith(filelist[i],"C1")) {
+	open(directory + File.separator + filelist[i]);
+	}
+}
+
 ```
 
 > [!NOTE]
@@ -408,7 +418,7 @@ One method is:
 - Does the mask need some cleaning or processing?
 - Set the measurement then analyze the particles. There is an option to summarize the result!
 - Save the resulting table as CSV
-- Curate the macro
+- Create the macro
 - Import the data in Excel (be sure to replace the `.` by `,`) and make one or a couple of quick graphes showing the result
 
 ![Exercice 1 Result.png](Images/Readme_images/Exercice_1_Result.png)
