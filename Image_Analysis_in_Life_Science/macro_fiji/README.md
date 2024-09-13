@@ -18,15 +18,15 @@ https://github.com/leclercsimon74/2024_Introductory-Course-to-Image-Analysis-in-
 
 A simple example, going from this movie of a bacterial 🦠 growth
 
-![rounding_assay.gif](Images/Readme_images/rounding_assay.gif)
+![rounding_assay.gif](Readme_images/rounding_assay.gif)
 
 To, with the help of a simple macro
 
-![Macro_example_macro.png](Images/Readme_images/Macro_example_macro.png)
+![Macro_example_macro.png](Readme_images/Macro_example_macro.png)
 
 At a result table showing the shape evolution of the bacterial population
 
-![Macro_example_result.png](Images/Readme_images/Macro_example_result.png)
+![Macro_example_result.png](Readme_images/Macro_example_result.png)
 
 The objective of this course is to learn the basic of ImageJ Macro language, with the almighty `Recorder` and the basic block of programmation such as `for` loop and `if` condition. At the end, **you** should have the tools and knowledge to be able to write your own macro!
 
@@ -118,10 +118,10 @@ Let's make our first full Macro!
 Congratulation on your first Macro!
 
 You should have something similar to the following:
-![Macro_1st_macro.png](Images/Readme_images/Macro_1st_macro.png)
+![Macro_1st_macro.png](Readme_images/Macro_1st_macro.png)
 
 Let's clean up a little bit to make it more readable:
-![Macro_1st_macro_clean.png](Images/Readme_images/Macro_1st_macro_clean.png)
+![Macro_1st_macro_clean.png](Readme_images/Macro_1st_macro_clean.png)
 
 Close all the ImageJ window (except the Macro editor!), then click on the `Run` 🏃 button on the macro editor to rerun the analysis.
 
@@ -205,23 +205,23 @@ To do most analysis, you are more than likely required to have a mask. There is 
 
 Sometimes, it is required to clean or manipulate the mask. This can be done using the MorphoLibJ (located in the Plugins. If not, installation is required, see at the bottom), using the `Morphological Filters` in `Filter`.
 
-![Morpholib_binary_erosion.png](Images/Readme_images/Morpholib_binary_erosion.png)
+![Morpholib_binary_erosion.png](Readme_images/Morpholib_binary_erosion.png)
 
 Multiple binary operations is available, such as `erosion`, `dilation`, `closing` (erosion of the dilation), `opening` (dilation of the erosion) and `filling holes` by example. There is also the 3D version of them if working with Z-stack. The ImageJ legacy version of such operation is also present in `Process` -> `Binary`.
 
 After cleaning the mask, it is time to extract some data from it, and for this ImageJ has a nice ROI (Region Of Interest) manager. It is possible to call it `Analyze` -> `Tools` -> `ROI Manager...`. It will open the following window.
 
-![ROI_manager.png](Images/Readme_images/ROI_manager.png)
+![ROI_manager.png](Readme_images/ROI_manager.png)
 
 However, one of the most classical way to call the ROI Manager is through the through the `Analyze` -> `Analyze Particle`. Just be sure to `Analyze` -> `Set Measurements` to the one you want to measure before. Once in the `Analyze Particle` menu, you can selection the option to add the different object in the ROI manager.
 
-![AnalyzeParticle_annoted.png](Images/Readme_images/AnalyzeParticle_annoted.png)
+![AnalyzeParticle_annoted.png](Readme_images/AnalyzeParticle_annoted.png)
 
 Then with the selection of the correct window and the ROI manager, it is possible to measure multiple parameters.
 
 In the example below, the mask (blue box) has been analyzed, then the original image (red box) has been selected and the `Multi-measure` from the ROI manager (located in `More`, purple arrow) has been used to measure the properties of each object, presented in the result table. Of course, all these steps can be automatize whitin a Macro.
 
-![Multimeasure_ex.png](Images/Readme_images/Multimeasure_ex.png)
+![Multimeasure_ex.png](Readme_images/Multimeasure_ex.png)
 
 ## Programming
 So far, we did not really did programming by itself. The `Macro Recorder` is doing most of the job for us, and we just did some clean up. The next step will involve a tiny bit more of writing, but once again, ImageJ simplify the work for us a little bit with the auto-completion tool. However, we still need to understand a couple of notion: the `for` loop and the `if` condition.
@@ -251,7 +251,7 @@ for (i = 0; i < 10; i++) {
 
 ImageJ macro simplify our life with the auto-completion active, just typing `for` should prompt the following hints, with the first one being the classical `for` loop, the second a loop that go through the Result table and the last one that go through a list of file. These are the most commun loop, and you can use them as a template to loop through anything.
 
-![for_loop_autocompletion.png](Images/Readme_images/for_loop_autocompletion.png)
+![for_loop_autocompletion.png](Readme_images/for_loop_autocompletion.png)
 
 There is also other kind of loop, such as the `while(condition){}`, where the condition is first evaluated and if `true`, it enters the loop until the condition is `false`, and the `do {...} while(condition);` that will excecute the loop first, then check the condition to determine to continue or not the loop.
 
@@ -331,24 +331,24 @@ print(sum(a,b))
 ### Image Brightness/Contrast
 By selecting `Image` -> `Adjust` -> `Brightness/Contrast...`, it will display the current image histogram and the possiblity to adjust the brightness and contrast of the image. Note that this does NOT change the data of the image, it is solely to make the image content easier to see, specially with a click on the `Auto` button. However, if you change the depth of the image (`Image` -> `Type`, the number of bit  by pixel), you will modify the data based on the current minimum and maximum!
 
-![Adjust_BC.png](Images/Readme_images/Adjust_BC.png)
+![Adjust_BC.png](Readme_images/Adjust_BC.png)
 
 ### Colors
 Images can have multiple channels, represeneted by color. The `Image` -> `Color` allow you to manipulate this, by either splitting, merging or arrange channels. One easy way though is to pick the `Channels Tool...`, enable the `Composite`, then selecting the channel to show or not. It is then possible to transform the image as RGB, ready to export.
 
-![channel_tool.png](Images/Readme_images/channel_tool.png)
+![channel_tool.png](Readme_images/channel_tool.png)
 
 ### Stack
 In a similar way, some images will have a Zstack, which can be manipulated with the `Image` -> `Stack`. From adding slices to remove only some, as well as realizing a Z projection or Z profile, a lot of tools are available to enable you a full control on Zstack.
 
-![Stack_ex.png](Images/Readme_images/Stack_ex.png)
+![Stack_ex.png](Readme_images/Stack_ex.png)
 
 ### Process
 ImageJ has a lot of simple processing step that may be usefull, albeit a little obscure on how they are doing things.
 
 A couple of them are usefull in case of uneven illumination, `Enhance Local Contrast (CLAHE)` and `Substract Background`. In the below example, you can see the original image on the left (red 🔴 rectangle) with its associated histogram, the CLAHE (default settings) correction (cyan 🔵 rectangle) and the background substraction (purple 🟣 rectangle). All images brightness and contrast are adjusted on the CLAHE correction. You can see that the CLAHE heavily adjust the histogram, pushing some values to higher value, which result in some spike in the histogram. On the opposite side, the background substraction push the histogram on the left, eliminating small values. The choice of the method used to diminush the background is up to you.
 
-![Background_correction.png](Images/Readme_images/Background_correction.png)
+![Background_correction.png](Readme_images/Background_correction.png)
 
 One last thing about the process is the `Image Calculator...`. This calculator allows you to do mathematical or logical operation between images. Below is a small macro that threshold an image, then using the image calculator, combine the original intensity with the mask so that only the object of interest gives signal.
 
@@ -371,7 +371,7 @@ run("Close-");
 imageCalculator("AND create", "embryos.jpg","embryos-1.jpg");
 ```
 
-![ImageCalculation_ex.png](Images/Readme_images/ImageCalculation_ex.png)
+![ImageCalculation_ex.png](Readme_images/ImageCalculation_ex.png)
 
 > [!NOTE]
 > Some calculation may require to manipulate the mask value (which is by default 255). This can be done in the `Process` -> `Math`.
@@ -409,7 +409,7 @@ If you download the full repositery, the image to try on is `C2-1B_MAX_010618_Hs
 
 Below is a montage of the image, that consist in the maxiumum projection of yeast population undergoing a meiosis. One easy way to analyse these data is to count the number of dots progression accross time. We can also see while looking at the data that the dot size seems to decrease, so let's measure the average size as well.
 
-![Yeast2_C2_Montage.png](Images/Readme_images/Yeast2_C2_Montage.png)
+![Yeast2_C2_Montage.png](Readme_images/Yeast2_C2_Montage.png)
 
 One method is:
 
@@ -421,7 +421,7 @@ One method is:
 - Create the macro
 - Import the data in Excel (be sure to replace the `.` by `,`) and make one or a couple of quick graphes showing the result
 
-![Exercice 1 Result.png](Images/Readme_images/Exercice_1_Result.png)
+![Exercice 1 Result.png](Readme_images/Exercice_1_Result.png)
 
 Then try the macro that you just record and curate on the other image (in the same folder) [link 🔗](Images/Yeast%20meiosis/C1-2E_MAX_09122017_Nsr1Hsp104Meiosis_04_R3D_D3Dzproj-1.tif). Just try to understand why it mays not work on this dataset.
 
@@ -435,18 +435,18 @@ Let's make a small macro, that is segmenting the myelin sheet, then clean the ma
 
 However, if you want to segment parts that are not extreme white or black in the image, you are likely to use a machine learning program. Again, FiJi have you cover with Weka (`Plugin` -> `Segmentation` -> `Trainable Weka Segmentation`). This is a pixel trainer and classifier. I recommend you to select a small part of the image of interest, and to reduce the size (a 1024x1024 allows to capture a lot, reduce the size by a factor 2 `Image` -> `Adjust` -> `Size...`) in order to speed up the process. Then you need to assign pixel to as many classes that you want/can. In the follow example, the first class is background, then we have the myelin, mitochondria and blood vessel. Just select with your favorite tool (`freehands selection` is perfect for that) and assign the selection to the class. Once you are satisfied, just click on train classifier and wait until it perfoms the training and classify the test image. You can then correct the image by adding the places where the model is wrong, and retrain, until your are satisfy. Then this model can be applied to other images.
 
-![Weka_ex_1.png](Images/Readme_images/Weka_ex_1.png)
+![Weka_ex_1.png](Readme_images/Weka_ex_1.png)
 
 It is possible to manually adjust which parameters the model can use for the training in setting. Have a look at the [documentation](https://imagej.net/plugins/tws/) if you are interested.
 
 ### 3D embryo timelapse
 You can found the images (66!) of embryo in the following [folder 🔗](Images/Time_course_embryo). These images are 3D, take some time to explore the data! Native Fiji is not very well adapted for 3D analysis. Most of the analysis will be done by slice of a stack, leading to... interesting trouble. You can have a quick try by segmenting the image (an Otsu thresholding do a perfect job), then a little bit of cleaning (like an opening, followed by a watershed) and finish with an analyze particle (just the size). You may have realized that the cell are quite oddly segmented, and that there is no continuation in 3D.
 
-![Embryo-t=60.gif](Images/Readme_images/Embryo-t=60.gif)
+![Embryo-t=60.gif](Readme_images/Embryo-t=60.gif)
 
 Luckily for us, some plugins are working in 3D. We then come back to MorphoLib, which can do an opening in 3D, allowing to separate a little better the different cells. For the sake of simplicity, let's extract an image at the center of the embryo (slice 70?), apply a watershed, set the measurement for the area and shape descriptor, then on the measure particle be sure to activate the summarize. This summarize have the nice effect that it will **NOT** be erased/emptied when you do a new measurment, meaning that you can process the full folder of image with one macro and save the average result of the given slice in one table - a lot simplier to analyze by Excel!
 
-![embryo-measure.png](Images/Readme_images/embryo-measure.png)
+![embryo-measure.png](Readme_images/embryo-measure.png)
 
 ### Rounding assay
 Let's go back to the beginning, and let's analyze the roundess of yeast budding ([link 🔗](Images/rounding_analysis)).
