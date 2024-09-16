@@ -1,3 +1,3 @@
 # Image_analysis_traditional
 
-Traditional image analysis algorithms.
+Traditional image analysis in life science
