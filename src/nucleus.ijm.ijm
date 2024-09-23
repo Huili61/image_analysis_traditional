@@ -85,10 +85,10 @@ for (i=min_num; i<max_num; i++) {
 	   selectImage("nucleus_mask_"+i);
 	   // large
 	   run("Duplicate...", "title=nucleus_mask_l_"+i);
-	   run("Maximum...", "radius=10");
+	   run("Maximum...", "radius=8");
 	   // small
 	   run("Duplicate...", "title=nucleus_mask_s_"+i);
-	   run("Minimum...", "radius=20");
+	   run("Minimum...", "radius=15");
 	   imageCalculator("XOR create", "nucleus_mask_l_"+i, "nucleus_mask_s_"+i);
 	   selectWindow("Result of nucleus_mask_l_"+i);
 	   run("Rename...", "title=nucleus_surface_mask_"+i);

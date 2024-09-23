@@ -6,7 +6,7 @@ This repository contains components for conducting image analysis in life scienc
 
 1. **Course Illustration Code**: The code for the course [Image Analysis in Life Science](./Image_Analysis_in_Life_Science).
 
-2. **Image Analysis Workflow**: The workflow includes the following steps:
+2. **Image Analysis Workflow**: Final report, the image extraction workflow includes the following steps:
    - **Segment** the nucleus and heterochromatin areas from a cell.
    - **Count** the Nuclear Pore Complex (NPC) objects.
    - **Measure** the total area and average fluorescence of the regions of interest (ROI).
@@ -14,6 +14,6 @@ This repository contains components for conducting image analysis in life scienc
 
 ## Scripts
 
-The following scripts are used for extraction and analysis:
-- **Extraction**: [nucleus.ijm](./src/nucleus.ijm)
+The following scripts are used for final report's image extraction and statistic analysis:
+- **Extraction**: [nucleus.ijm](./src/nucleus.ijm.ijm)
 - **Analysis**: [analysis.ipynb](./src/analysis.ipynb)
